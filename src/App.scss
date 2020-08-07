@@ -1,0 +1,29 @@
+$theme-colors: (
+  'primary': #e7ab3c,
+);
+
+$enable-rounded: false;
+
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  font-family: 'Muli', sans-serif;
+  font-size: 16px;
+}
+
+.btn {
+  text-transform: uppercase;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 13px 20px 12px;
+  &:hover,
+  &:focus {
+    color: white;
+  }
+}
+
+//override bootstrap button color on active state
+.btn-primary:not(:disabled):not(.disabled):active {
+  color: white;
+}
