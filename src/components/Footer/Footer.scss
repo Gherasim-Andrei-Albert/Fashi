@@ -3,6 +3,7 @@
 .Footer {
   background: #191919;
   padding-top: 75px;
+  padding-bottom: 15px;
   .Footer__logo {
     display: block;
     margin-bottom: 24px;
@@ -83,6 +84,6 @@
   .payment {
     max-width: 100%;
     display: block;
-    margin: 0 auto 15px;
+    margin: 0 auto;
   }
 }
