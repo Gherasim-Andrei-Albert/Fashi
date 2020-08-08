@@ -8,10 +8,10 @@ import './Footer.scss';
 const Footer: React.FC = () => (
   <footer className="Footer">
     <div className="container-sm">
+      <Link className="Footer__logo" to="/">
+        <img src={require('../../img/footer-logo.png')} alt="fashi logo" />
+      </Link>
       <address>
-        <Link className="Footer__logo" to="/">
-          <img src={require('../../img/footer-logo.png')} alt="fashi logo" />
-        </Link>
         <ul>
           <li>Address: 60-49 Road 11378 New York</li>
           <li>Phone: +65 11.188.888</li>
