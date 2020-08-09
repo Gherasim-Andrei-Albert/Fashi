@@ -1,0 +1,106 @@
+@import '../../App.scss';
+
+.Navbar {
+  &.navbar {
+    padding-bottom: 5px;
+  }
+
+  &.navbar-light .navbar-toggler {
+    color: white;
+  }
+
+  .navbar-toggler {
+    background-color: map-get($map: $theme-colors, $key: 'primary');
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    text-shadow: 0 1px 3px black;
+    display: flex;
+    align-items: center;
+    padding: 7px 10px;
+    margin-left: auto;
+    margin-bottom: 6px;
+    margin-right: -10px;
+    border: none;
+    img {
+      margin-left: 7px;
+    }
+  }
+
+  .navbar-nav {
+    background-color: #333;
+  }
+
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: white;
+    text-decoration: none;
+  }
+
+  // overide bootstrap dropdown toggler's color
+  &.navbar-light .navbar-nav {
+    .nav-link {
+      &,
+      &:hover,
+      &:focus {
+        color: white;
+      }
+    }
+    .show > .nav-link {
+      color: white;
+    }
+  }
+
+  a,
+  //rule also applies on bootstrap toogler
+  .navbar-nav .nav-link {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  a:hover {
+    background-color: map-get($map: $theme-colors, $key: 'primary');
+  }
+
+  .dropdown-menu {
+    background-color: #333;
+    padding: 0;
+    border: none;
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    flex-direction: column;
+    transition: 0.3s max-height;
+    &.show {
+      max-height: 500px;
+      transition: 1s max-height;
+    }
+    a {
+      display: block;
+      padding-left: 25px;
+    }
+  }
+
+  .dropdown {
+    .dropdown-toggle:after {
+      content: url('../../img/arrow.svg');
+      border: none;
+      vertical-align: bottom;
+      margin-left: 10px;
+    }
+    &.show {
+      .dropdown-toggle:after {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .dropdown-item.active,
+  .dropdown-item:active {
+    &:not(:hover) {
+      background-color: transparent;
+    }
+  }
+}
