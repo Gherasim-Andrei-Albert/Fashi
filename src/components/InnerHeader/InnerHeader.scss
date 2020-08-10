@@ -1,0 +1,58 @@
+@import '../../App.scss';
+
+.InnerHeader {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  img {
+    align-self: center;
+    padding: 12px 0;
+  }
+  input,
+  input:focus {
+    color: #b2b2b2;
+    height: 46.2px;
+    border: 1px solid #ebebeb;
+    padding-left: 20px;
+    margin-right: 1px;
+  }
+  .btn {
+    margin-right: -10px;
+  }
+  .toolbar {
+    position: absolute;
+    top: 100%;
+    margin-top: 17px;
+    display: flex;
+    align-items: flex-start;
+    p {
+      margin: 0 0 0 20px;
+      line-height: 18px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #252525;
+    }
+    i:first-of-type {
+      margin-right: 20px;
+    }
+    i {
+      position: relative;
+    }
+    span {
+      position: absolute;
+      top: -7px;
+      right: -10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 15px;
+      width: 15px;
+      background-color: map-get($map: $theme-colors, $key: 'primary');
+      border-radius: 7px;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Muli', sans-serif;
+    }
+  }
+}
