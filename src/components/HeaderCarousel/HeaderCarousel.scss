@@ -1,0 +1,98 @@
+@import '../../App.scss';
+
+.HeaderCarousel {
+  .HeaderCarousel__slide {
+    padding: 110px 25px 80px;
+    background-position: left center;
+    span {
+      font-size: 12px;
+      font-weight: 700;
+      color: map-get($map: $theme-colors, $key: 'primary');
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 18px;
+      display: block;
+    }
+    h2 {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 48px;
+    }
+    p {
+      color: #636363;
+      margin-bottom: 42px;
+      line-height: 26px;
+    }
+    .btn {
+      font-size: 14px;
+      padding: 12px 30px;
+    }
+  }
+  .react-multiple-carousel__arrow {
+    min-width: initial;
+    min-height: initial;
+    border-radius: initial;
+    padding: 0;
+    background-color: initial;
+    top: 45%;
+    &::before {
+      content: ' ';
+      background-image: url('../../img/right_arrow.svg');
+      height: 30px;
+      width: 15px;
+    }
+    &#{--left} {
+      transform: rotate(180deg);
+      left: 10px !important;
+    }
+    &#{--right} {
+      right: 10px;
+    }
+  }
+  .react-multi-carousel-item {
+    p,
+    h2,
+    span,
+    button {
+      opacity: 0;
+      transform: translateY(100%);
+      //transition: 0.4 all;
+    }
+    &#{--active} {
+      p,
+      h2,
+      span,
+      button {
+        opacity: 1;
+        transform: translateY(0);
+        transition: 0.4s all;
+      }
+      // span {
+      //   animation: fadeTranslateIn ease-out 0.4s;
+      // }
+      h2 {
+        transition-delay: 0.4s;
+        //animation: fadeTranslateIn ease-out 0.4s 0.4s both;
+      }
+      p {
+        transition-delay: 0.8s;
+        //animation: fadeTranslateIn ease-out 0.4s 0.8s both;
+      }
+      button {
+        transition-delay: 1.2s;
+        //animation: fadeTranslateIn ease-out 0.4s 1.2s both;
+      }
+    }
+  }
+
+  // @keyframes fadeTranslateIn {
+  //   from {
+  //     transform: translateY(100%);
+  //     opacity: 0;
+  //   }
+  //   to {
+  //     transform: translateY(0);
+  //     opacity: 1;
+  //   }
+  // }
+}
