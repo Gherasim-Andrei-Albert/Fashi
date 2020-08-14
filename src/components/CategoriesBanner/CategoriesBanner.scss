@@ -1,0 +1,38 @@
+.CategoriesBanner {
+  padding: 80px 15px 50px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+  div {
+    position: relative;
+    margin-bottom: 30px;
+    &::before {
+      position: absolute;
+      content: '';
+      border: 13px solid rgba($color: white, $alpha: 0.3);
+      left: 35px;
+      top: 30px;
+      width: calc(100% - 70px);
+      height: calc(100% - 60px);
+      transform: scale(0);
+      transition: all 0.3s;
+    }
+    &:hover::before {
+      transform: scale(1);
+    }
+  }
+  span {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 11px 28px;
+    background-color: white;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28.8px;
+  }
+}
