@@ -18,7 +18,12 @@ const backgrounds: any[] = [
 
 const HeaderCarousel: React.FC = () => (
   <section className="HeaderCarousel">
-    <Carousel responsive={responsive} infinite={true} autoPlay={true}>
+    <Carousel
+      responsive={responsive}
+      infinite={true}
+      autoPlay={true}
+      customTransition="none"
+    >
       {backgrounds.map((background) => (
         <div
           className="HeaderCarousel__slide"

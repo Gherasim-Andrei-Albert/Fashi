@@ -54,45 +54,42 @@
     h2,
     span,
     button {
-      opacity: 0;
-      transform: translateY(100%);
-      //transition: 0.4 all;
+      animation: none;
+      visibility: hidden;
     }
     &#{--active} {
-      p,
-      h2,
-      span,
-      button {
-        opacity: 1;
-        transform: translateY(0);
-        transition: 0.4s all;
-      }
-      // span {
-      //   animation: fadeTranslateIn ease-out 0.4s;
-      // }
-      h2 {
-        transition-delay: 0.4s;
-        //animation: fadeTranslateIn ease-out 0.4s 0.4s both;
-      }
-      p {
-        transition-delay: 0.8s;
-        //animation: fadeTranslateIn ease-out 0.4s 0.8s both;
-      }
-      button {
-        transition-delay: 1.2s;
-        //animation: fadeTranslateIn ease-out 0.4s 1.2s both;
+      &[data-index='2'],
+      &[data-index='3'] {
+        p,
+        h2,
+        span,
+        button {
+          visibility: visible;
+          animation-name: fadeTranslateIn;
+          animation-fill-mode: both;
+          animation-duration: 0.4s;
+        }
+        h2 {
+          animation-delay: 0.4s;
+        }
+        p {
+          animation-delay: 0.8s;
+        }
+        button {
+          animation-delay: 1.2s;
+        }
       }
     }
   }
 
-  // @keyframes fadeTranslateIn {
-  //   from {
-  //     transform: translateY(100%);
-  //     opacity: 0;
-  //   }
-  //   to {
-  //     transform: translateY(0);
-  //     opacity: 1;
-  //   }
-  // }
+  @keyframes fadeTranslateIn {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 }
