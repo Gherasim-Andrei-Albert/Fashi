@@ -1,0 +1,41 @@
+.GenderCover {
+  margin: 0;
+  height: 620px;
+  position: relative;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  div {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 285px;
+    text-align: center;
+  }
+  h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 18px;
+  }
+  a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: white;
+      text-transform: capitalize;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 27px;
+      font-weight: 500;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid white;
+    }
+  }
+}
