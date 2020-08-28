@@ -1,0 +1,72 @@
+@import '../../variables.scss';
+
+.DealOfTheWeek {
+  padding: 80px 30px;
+  background-image: url('../../img/time-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  h2 {
+    color: #252525;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 38px;
+    text-align: center;
+    position: relative;
+    &::after {
+      content: ' ';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translate(-50%, 100%);
+      height: 3px;
+      width: 80px;
+      background-color: map-get($map: $theme-colors, $key: 'primary');
+    }
+  }
+  p {
+    text-align: center;
+    line-height: 26px;
+    color: #6e6e6e;
+  }
+  div {
+    text-align: center;
+    color: #636363;
+  }
+  .price {
+    font-size: 24px;
+    font-weight: 700;
+    color: map-get($map: $theme-colors, $key: 'primary');
+  }
+  .countdown {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+  .countdown__item {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px 6px;
+    margin-right: 5px;
+  }
+  .countdown__time {
+    color: map-get($map: $theme-colors, $key: 'primary');
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: bold;
+  }
+  .countdown__unit {
+    color: #b2b2b2;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  .btn {
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 auto;
+    display: block;
+  }
+}
