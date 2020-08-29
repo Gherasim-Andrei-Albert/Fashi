@@ -1,12 +1,72 @@
 .HeaderTop {
   border-bottom: 1px solid #e5e5e5;
-  display: flex;
-  align-items: center;
-  a {
-    display: block;
+  .container-sm {
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+  }
+  .item {
+    display: flex;
+    align-items: center;
+    &:not(:last-child) {
+      border-right: 1px solid #e5e5e5;
+    }
+    &:nth-child(1),
+    &:nth-child(2) {
+      display: none;
+    }
+  }
+  .login {
     padding: 9px 0 7px 20px;
-    border-left: 1px solid #e5e5e5;
     color: black;
     text-decoration: none;
+  }
+  .fa-user {
+    font-size: 12px;
+  }
+  @media (min-width: 768px) {
+    .container-sm {
+      height: 55px;
+      align-items: stretch;
+    }
+    .item {
+      &:nth-child(1),
+      &:nth-child(2) {
+        display: flex;
+      }
+    }
+    .mail {
+      font-size: 16px;
+      padding: 15px 10px 15px 0;
+    }
+    .login {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+    }
+    i {
+      margin-right: 8px;
+    }
+    .phone-social {
+      flex: 1;
+      justify-content: space-between;
+    }
+    .phone {
+      padding: 15px 0 12px 10px;
+    }
+    .fa-phone {
+      transform: rotateY(180deg);
+    }
+    .social {
+      padding: 15px 10px 15px 0;
+      i {
+        margin: 0;
+      }
+      a {
+        margin-left: 10px;
+        color: black;
+      }
+    }
   }
 }

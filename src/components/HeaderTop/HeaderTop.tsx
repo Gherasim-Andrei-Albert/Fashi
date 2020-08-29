@@ -23,7 +23,11 @@ const flag = (flag: any = require('../../img/flag-1.jpg')) => ({
 });
 
 const languagesStyles = {
-  valueContainer: (styles: any) => ({ ...styles, flex: 'initial', padding: 0 }),
+  valueContainer: (styles: any) => ({
+    ...styles,
+    flex: 'initial',
+    padding: 0,
+  }),
   singleValue: (styles: any, { data }: any) => ({
     ...styles,
     maxWidth: 'initial',
@@ -59,7 +63,7 @@ const languagesStyles = {
   }),
   container: (style: any) => ({
     ...style,
-    marginLeft: 'auto',
+    alignSelf: 'center',
   }),
   option: (styles: any, { data }: any) => {
     return {
@@ -72,17 +76,47 @@ const languagesStyles = {
 };
 
 const HeaderTop: React.FC = () => (
-  <div className="HeaderTop container-sm">
-    <Select
-      defaultValue={options[0]}
-      label="language"
-      options={options}
-      isSearchable={false}
-      styles={languagesStyles}
-    />
-    <Link to="/">
-      <i className="fa fa-user"></i> Login
-    </Link>
+  <div className="HeaderTop">
+    <div className="container-sm">
+      <div className="item">
+        <span className="mail">
+          <i className="fas fa-envelope"></i>hello.colorlib@gmail.com
+        </span>
+      </div>
+      <div className="item phone-social">
+        <span className="phone">
+          <i className="fas fa-phone"></i>+65 11.188.888
+        </span>
+        <span className="social">
+          <a href="https://www.facebook.com/" target="_blank">
+            <i className="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/" target="_blank">
+            <i className="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank">
+            <i className="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://pinterest.com/" target="_blank">
+            <i className="fab fa-pinterest-p"></i>
+          </a>
+        </span>
+      </div>
+      <div className="item">
+        <Select
+          defaultValue={options[0]}
+          label="language"
+          options={options}
+          isSearchable={false}
+          styles={languagesStyles}
+        />
+      </div>
+      <div className="item">
+        <Link to="/" className="login">
+          <i className="fa fa-user"></i> Login
+        </Link>
+      </div>
+    </div>
   </div>
 );
 
