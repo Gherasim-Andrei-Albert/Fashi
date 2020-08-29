@@ -1,15 +1,20 @@
 import React from 'react';
 import './GenderCover.scss';
 
-const GenderCover: React.FC = () => (
-  <div className="GenderCover container-sm">
-    {/* Image has emty alt because it's only a decoration image and css image dosen't work here. */}
-    <img
-      src={`${process.env.PUBLIC_URL}/img/products/women-large.jpg`}
-      alt=""
-    />
+type GenderCoverProps = {
+  cover: string;
+  coverTitle: string;
+};
+
+const GenderCover: React.FC<GenderCoverProps> = (props: GenderCoverProps) => (
+  <div
+    className="GenderCover container-sm"
+    style={{
+      backgroundImage: `url(/img/${props.cover})`,
+    }}
+  >
     <div>
-      <h2>Women's</h2>
+      <h2>{props.coverTitle}</h2>
       <a href="#">discover more</a>
     </div>
   </div>

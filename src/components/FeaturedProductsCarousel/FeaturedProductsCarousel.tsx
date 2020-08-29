@@ -1,50 +1,10 @@
 import React from 'react';
+import { FeaturedProduct } from './FeaturedProductType';
+import { PromotionFeaturedProduct } from './PromotionFeaturedProductType';
 import Carousel from 'react-multi-carousel';
 import Button from 'react-bootstrap/Button';
 import 'react-multi-carousel/lib/styles.css';
 import './FeaturedProductsCarousel.scss';
-
-type FeaturedProduct = {
-  img: string;
-  alt: string;
-  category: string;
-  name: string;
-  price: number;
-};
-
-type PromotionFeaturedProduct = FeaturedProduct & { oldPrice: number };
-
-const featuredProducts: (FeaturedProduct | PromotionFeaturedProduct)[] = [
-  {
-    img: 'women-1.jpg',
-    alt: 'yellow woman blouse',
-    category: 'coat',
-    name: 'Pure Pineapple',
-    price: 14,
-    oldPrice: 35,
-  },
-  {
-    img: 'women-2.jpg',
-    alt: 'grey woman blouse',
-    category: 'shoes',
-    name: 'Guangzhou sweater',
-    price: 13,
-  },
-  {
-    img: 'women-3.jpg',
-    alt: 'grey woman blouse',
-    category: 'towel',
-    name: 'Pure Pineapple',
-    price: 34,
-  },
-  {
-    img: 'women-4.jpg',
-    alt: 'white woman handbag',
-    category: 'towel',
-    name: 'Converse Shoes',
-    price: 34,
-  },
-];
 
 const responsive = {
   mobile: {
@@ -53,7 +13,13 @@ const responsive = {
   },
 };
 
-const FeaturedProductsCarousel: React.FC = () => (
+type FeaturedProductsCarouselProps = {
+  products: (FeaturedProduct | PromotionFeaturedProduct)[];
+};
+
+const FeaturedProductsCarousel: React.FC<FeaturedProductsCarouselProps> = (
+  props: FeaturedProductsCarouselProps
+) => (
   <div className="FeaturedProductsCarousel container-sm">
     <fieldset>
       <legend>featured products categories</legend>
@@ -76,7 +42,7 @@ const FeaturedProductsCarousel: React.FC = () => (
       autoPlay={true}
       removeArrowOnDeviceType={['mobile']}
     >
-      {featuredProducts.map((product) => (
+      {props.products.map((product) => (
         <div className="product">
           <div className="product__img-container">
             <button className="heartBtn">

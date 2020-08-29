@@ -1,0 +1,15 @@
+.MenFeaturedProducts {
+  display: flex;
+  flex-direction: column;
+  .GenderCover {
+    order: 1;
+    margin-top: 40px;
+    margin-bottom: 80px;
+  }
+  .react-multi-carousel-list {
+    padding-bottom: 24px;
+  }
+  .react-multi-carousel-dot-list {
+    bottom: 0;
+  }
+}
