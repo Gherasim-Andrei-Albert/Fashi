@@ -6,8 +6,19 @@ import './InnerHeader.scss';
 
 const InnerHeader: React.FC = () => (
   <div className="InnerHeader container-sm">
-    <img src={require('../../img/logo.png')} alt="Fashi logo" />
+    <div className="logo">
+      <img src={require('../../img/logo.png')} alt="Fashi logo" />
+    </div>
     <InputGroup>
+      <div className="select-wraper">
+        <select name="category" id="category">
+          <option value="all categories">all categories</option>
+          <option value="men's">men's</option>
+          <option value="women's">women's</option>
+          <option value="kid's">kid's</option>
+        </select>
+        <i className="fas fa-angle-down"></i>
+      </div>
       <FormControl
         placeholder="What do you need?"
         aria-label="type your search"
