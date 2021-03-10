@@ -1,0 +1,62 @@
+@import '../../variables.scss';
+
+.navDropdown--show {
+  .navDropdown__toggle::after {
+    display: inline-block;
+    transform: rotate(90deg);
+  }
+}
+
+.navDropdown__toggle {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  color: white;
+  &:hover {
+    background-color: map-get($map: $theme-colors, $key: 'primary');
+  }
+  &::after {
+    content: url('../../img/arrow.svg');
+    margin-left: 10px;
+  }
+}
+
+.navDropdown__menu {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  a {
+    padding: 8px 15px 8px 25px;
+  }
+}
+
+// .dropdown {
+//     .dropdown-toggle:after {
+//       content: url('../../img/arrow.svg');
+//       border: none;
+//       vertical-align: bottom;
+//       margin-left: 10px;
+//     }
+//     &.show {
+//       .dropdown-toggle:after {
+//         transform: rotate(90deg);
+//       }
+//     }
+//   }
+
+@media (min-width: 768px) {
+  .navDropdown__toggle {
+    width: initial;
+    border-right: 2px solid #3b3b3b;
+    &::after {
+      display: none;
+    }
+  }
+  .navDropdown--show {
+    .navDropdown__toggle::after {
+      display: none;
+    }
+  }
+}

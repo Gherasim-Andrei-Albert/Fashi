@@ -1,107 +1,82 @@
-@import '../../App.scss';
+@import '../../variables.scss';
 
-.Navbar {
-  &.navbar {
-    padding-top: 10px;
-    padding-bottom: 5px;
-  }
-
-  &.navbar-light .navbar-toggler {
-    color: white;
-  }
-
-  .navbar-toggler {
-    background-color: map-get($map: $theme-colors, $key: 'primary');
-    text-transform: uppercase;
-    font-size: 16px;
-    font-weight: 700;
-    text-shadow: 0 1px 3px black;
+.navbar {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 0;
+  padding-right: 0;
+  .container-sm {
     display: flex;
-    align-items: center;
-    padding: 7px 10px;
-    margin-left: auto;
-    margin-bottom: 6px;
-    margin-right: -10px;
-    border: none;
-    img {
-      margin-left: 7px;
-    }
+    flex-direction: column;
+    align-items: flex-start;
   }
+}
 
-  .navbar-nav {
-    background-color: #333;
+.navbar__toggle {
+  color: white;
+  background-color: map-get($map: $theme-colors, $key: 'primary');
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  text-shadow: 0 1px 3px black;
+  display: flex;
+  align-items: center;
+  padding: 7px 10px;
+  margin-left: auto;
+  margin-bottom: 6px;
+  margin-right: -10px;
+  border: none;
+  img {
+    margin-left: 7px;
   }
+}
 
-  a:link,
-  a:visited,
-  a:hover,
-  a:active {
-    color: white;
-    text-decoration: none;
-  }
-
-  // overide bootstrap dropdown toggler's color
-  &.navbar-light .navbar-nav {
-    .nav-link {
-      &,
-      &:hover,
-      &:focus {
-        color: white;
-      }
-    }
-    .show > .nav-link {
-      color: white;
-    }
-  }
-
-  a,
-  //rule also applies on bootstrap toogler
-  .navbar-nav .nav-link {
-    font-size: 14px;
+.navbar__menu {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  background-color: #333;
+  overflow: hidden;
+  transition: 0.3s height;
+  > a,
+  .navDropdown__toggle {
     padding: 8px 15px;
   }
-
-  a:hover {
-    background-color: map-get($map: $theme-colors, $key: 'primary');
+  a,
+  .navDropdown__toggle {
+    font-size: 14px;
   }
+  a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: white;
+      text-decoration: none;
+    }
+    &:hover {
+      background-color: map-get($map: $theme-colors, $key: 'primary');
+    }
+  }
+}
 
-  .dropdown-menu {
-    background-color: #333;
+@media (min-width: 768px) {
+  .navbar__toggle {
+    display: none;
+  }
+  .navbar__menu {
+    flex-direction: row;
     padding: 0;
-    border: none;
-    max-height: 0;
-    display: block;
-    overflow: hidden;
-    flex-direction: column;
-    transition: 0.3s max-height;
-    &.show {
-      max-height: 500px;
-      transition: 1s max-height;
-    }
-    a {
-      display: block;
-      padding-left: 25px;
+    > a,
+    .navDropdown__toggle {
+      border-right: 2px solid #3b3b3b;
+      padding: 15px 10px;
+      font-weight: bold;
+      text-transform: uppercase;
     }
   }
-
-  .dropdown {
-    .dropdown-toggle:after {
-      content: url('../../img/arrow.svg');
-      border: none;
-      vertical-align: bottom;
-      margin-left: 10px;
-    }
-    &.show {
-      .dropdown-toggle:after {
-        transform: rotate(90deg);
-      }
-    }
-  }
-
-  .dropdown-item.active,
-  .dropdown-item:active {
-    &:not(:hover) {
-      background-color: transparent;
-    }
+  .navbar {
+    padding: 0;
+    background-color: #333;
   }
 }

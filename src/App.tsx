@@ -1,10 +1,10 @@
 import React from 'react';
+import './App.scss';
 import Footer from './components/Footer/Footer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Partners from './components/Partners/Partners';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
-import './App.scss';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <Home />
         </Route>
       </Switch>
-      <Partners></Partners>
+      <Partners />
       <Footer />
     </Router>
   );

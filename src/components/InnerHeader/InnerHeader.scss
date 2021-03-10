@@ -1,4 +1,4 @@
-@import '../../App.scss';
+@import '../../variables.scss';
 
 .InnerHeader {
   position: relative;
@@ -61,7 +61,8 @@
 
   @media (min-width: 768px) {
     flex-direction: row;
-    padding: 40px 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
     .btn {
       margin-right: 0;
     }
